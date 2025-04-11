@@ -1,2 +1,5 @@
+* v0.1.1
+- fix ~formatFloat~ to not get confused by negative numbers
+- add ~formatOrgTable~ to align columns in an Org table (as a string)  
 * v0.1.0
 - basic support for ~seq[tuple]~ types to convert to Org tables

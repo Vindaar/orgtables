@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "Vindaar"
 description   = "A library to turn Nim data into Org tables"
 license       = "MIT"
