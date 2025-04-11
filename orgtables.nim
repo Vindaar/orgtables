@@ -1,7 +1,7 @@
 import std / [strutils, strformat, sequtils]
 
 proc formatFloat(x: SomeFloat, precision: int): string =
-  if x < 1e-3:
+  if abs(x) < 1e-3 and x != 0.0:
     result = formatBiggestFloat(x, ffScientific, precision = precision)
   else:
     result = formatBiggestFloat(x, ffDecimal, precision = precision)
