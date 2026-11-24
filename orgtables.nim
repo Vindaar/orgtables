@@ -9,14 +9,14 @@ proc formatFloat(x: SomeFloat, precision: int): string =
 proc toOrgLine*[T: tuple](x: T, precision = 2): string =
   var vals = newSeq[string]()
   for f, v in fieldPairs(x):
-    when typeof(v) is float:
+    when typeof(v) is SomeFloat:
       vals.add formatFloat(v, precision)
     else:
       vals.add $v
   result = "| " & vals.join(" | ") & " |\n"
 
 proc toOrgLine*[T](s: openArray[T], precision = 2): string =
-  when T is float:
+  when T is SomeFloat:
     "| " & s.mapIt(it.formatFloat(precision)).join(" | ") & " |\n"
   else:
     "| " & s.mapIt($it).join(" | ") & " |\n"
